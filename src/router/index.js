@@ -11,10 +11,13 @@ routes:[
     },
     {
         path:'/chat',name:'chat',component:()=>import('@/views/ChatView.vue'),
+        children:[
+            {
+                path:':chatId',name:'chat-individual',component:()=>import('@/views/ChatIndividualView.vue'),
+            }
+        ]
     },
-    {
-        path:'/chat/:chatId',name:'chat-personal',component:()=>import('@/views/ChatView.vue'),
-    }
+   
 ],
 });
 export default router;
