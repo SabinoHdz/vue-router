@@ -1,17 +1,34 @@
 <template>
   <div>
     <aside>
-        Chats
+        <div v-for="chat in chats" :key="chat.id">
+          <router-link :to="`/chat/${chat.id}`"> 
+            {{ chat.name }}
+          </router-link>
+        </div>
     </aside>
     <article>
         Mensajes
+        <p>
+          {{ this.$route.params.chatId }}
+        </p>
     </article>
   </div>
 </template>
 
 <script>
 export default {
-
+data(){
+  return{
+    chats:[
+      { id:1,name:'Juan'},
+      { id:2,name:'Ximena'},
+      { id:3,name:'Luz'},
+      { id:4,name:'Carlos'},
+      { id:5,name:'Martin'},
+    ]
+  }
+}
 }
 </script>
 

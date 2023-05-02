@@ -11,6 +11,9 @@ routes:[
     },
     {
         path:'/chat',name:'chat',component:()=>import('@/views/ChatView.vue'),
+    },
+    {
+        path:'/chat/:chatId',name:'chat-personal',component:()=>import('@/views/ChatView.vue'),
     }
 ],
 });
