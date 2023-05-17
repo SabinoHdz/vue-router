@@ -4,7 +4,10 @@ const router=createRouter({
 history:createWebHistory(),
 routes:[
     {
-        path:'/',name:'home',component:HomeView
+        path:'/',name:'home',component:HomeView, alias:['/home','/inicio']
+    },
+    {
+        //path:'/home',redirect:'/',
     },
     {
      path:'/session',component:()=>import('@/views/SessionView.vue'),
