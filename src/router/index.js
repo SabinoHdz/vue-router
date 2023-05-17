@@ -1,5 +1,6 @@
 import {createRouter,createWebHistory} from 'vue-router';
 import HomeView from '@/views/HomeView.vue'
+import NotFoundView from '@/views/404View.vue';
 const router=createRouter({
 history:createWebHistory(),
 routes:[
@@ -56,6 +57,12 @@ routes:[
             }
         ]
     },
+    {
+    path:'/404',name:'error',component:NotFoundView,
+    },
+    {
+        path:'/:catchAll(.*)',redirect:'/404'
+    }
    
 ],
 });
