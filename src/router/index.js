@@ -47,4 +47,16 @@ routes:[
    
 ],
 });
+//guardas de navegaciopm
+//sistema de permisos
+//sistemas de sesiones
+router.beforeEach((to,from)=>{
+    console.log("to",to);
+    console.log("from",from)
+
+    if(to.path==='/'){
+        //return '/about'
+        return {name:'about'}
+    }
+})
 export default router;
