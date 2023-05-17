@@ -29,7 +29,18 @@ routes:[
         path:'/chat',name:'chat',component:()=>import('@/views/ChatView.vue'),
         children:[
             {
-                path:':chatId',name:'chat-individual',component:()=>import('@/views/ChatIndividualView.vue'),
+                path:':chatId',
+                name:'chat-individual',
+                component:()=>import('@/views/ChatIndividualView.vue'),
+                props:(route)=>{
+                    return{
+                        chatId:route.params.chatId
+                    }
+                }
+                //props:true
+                //props:{
+                //    chatId:'3'
+                //}
             }
         ]
     },
