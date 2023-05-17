@@ -62,17 +62,17 @@ routes:[
 //guardas de navegaciopm
 //sistema de permisos
 //sistemas de sesiones
-router.beforeEach((to,from)=>{
-    console.log("to",to);
-    console.log("from",from)
-    if(to.meta?.requiresAuth && to.meta?.roles.includes('admin')){
-        console.log(to.path, ' requires auth')
-        return {name:'session'}
-    }
+// router.beforeEach((to,from)=>{
+//     console.log("to",to);
+//     console.log("from",from)
+//     if(to.meta?.requiresAuth && to.meta?.roles.includes('admin')){
+//         console.log(to.path, ' requires auth')
+//         return {name:'session'}
+//     }
 
-    if(to.path==='/'){
-        //return '/about'
-        return {name:'about'}
-    }
-})
+//     if(to.path==='/'){
+//         //return '/about'
+//         return {name:'about'}
+//     }
+// })
 export default router;
