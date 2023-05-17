@@ -16,28 +16,19 @@
     </article>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      chats: []
-    }
-  },
-  created() {
-    this.$watch(
-      () => this.$route.params,
-      (val) => {
-        console.log('update params ', val)
-        this.chats = [{ id: 1, name: 'Juan' },
+<script setup>
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router';
+  const chats=ref();
+  const route=useRoute();
+  watch(()=>route.params,(val)=>{
+    console.log('update params',val)
+    chats.value = [{ id: 1, name: 'Juan' },
         { id: 2, name: 'Ximena' },
         { id: 3, name: 'Luz' },
         { id: 4, name: 'Carlos' },
         { id: 5, name: 'Martin' }]
-      }, { immediate: true }
-    )
-  },
-}
+  }, { immediate: true });
 </script>
 
 <style></style>

@@ -3,26 +3,15 @@
   <input type="text" placeholder="Introduce tu nombre" v-model="username">
   <button @click="iniciar">Iniciar sesion</button>
 </template>
-
-<script>
-export default {
-data(){
-    return{
-        username:null,
-    }
-},
-methods:{
-  iniciar(){
-    this.$router.push({name:'chat',query:{
-      varable:1,
-    },
-    //replace:true
-  });
-  }
-}
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from "vue-router";
+const username=ref();
+const router=useRouter();
+const iniciar=()=>{
+  router.push({name:'about'});
 }
 </script>
-
 <style>
 
 </style>
